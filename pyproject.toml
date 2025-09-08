@@ -9,6 +9,7 @@ dependencies = [
     "ipywidgets>=8.1.7",
     "rich>=14.1.0",
     "sqlalchemy>=2.0.43",
+    "streamlit>=1.49.1",
 ]
 
 [dependency-groups]
