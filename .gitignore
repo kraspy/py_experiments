@@ -17,3 +17,6 @@ venv/
 
 # OS Files
 .DS_Store
+
+# SQLite
+**/*.sqlite
