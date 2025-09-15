@@ -5,6 +5,7 @@ build/
 dist/
 wheels/
 *.egg-info
+tempCodeRunnerFile.*
 
 # Virtual environments
 venv/
