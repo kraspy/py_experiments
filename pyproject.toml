@@ -6,7 +6,8 @@ readme = "README.md"
 requires-python = ">=3.12,<3.13"
 dependencies = [
     "aiohttp>=3.12.15",
-    "fastapi[asyncio]>=0.117.1",
+    "docxtpl>=0.20.1",
+    "fastapi>=0.117.1",
     "ipython-sql>=0.5.0",
     "ipywidgets>=8.1.7",
     "pydantic-settings>=2.10.1",
