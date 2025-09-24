@@ -1,5 +1,10 @@
+import typing
+
 from sqlalchemy import String
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.orm import Mapped, mapped_column, relationship
+
+if typing.TYPE_CHECKING:
+    from .post import Post
 
 from .base import Base
 
@@ -11,3 +16,4 @@ class User(Base):
     username: Mapped[str] = mapped_column(String(20), nullable=False)
     fullname: Mapped[str] = mapped_column(String(50), nullable=False)
     email: Mapped[str] = mapped_column(String(120), nullable=False)
+    posts: Mapped[list['Post']] = relationship('Post', back_populates='author')
