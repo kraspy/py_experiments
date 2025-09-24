@@ -16,4 +16,12 @@ class User(Base):
     username: Mapped[str] = mapped_column(String(20), nullable=False)
     fullname: Mapped[str] = mapped_column(String(50), nullable=False)
     email: Mapped[str] = mapped_column(String(120), nullable=False)
-    posts: Mapped[list['Post']] = relationship('Post', back_populates='author')
+    posts: Mapped[list['Post']] = relationship(back_populates='author')
+
+    def __repr__(self) -> str:
+        return (
+            f'User(id={self.id!r}, '
+            f'username={self.username!r}, '
+            f'fullname={self.fullname!r}, '
+            f'email={self.email!r})'
+        )

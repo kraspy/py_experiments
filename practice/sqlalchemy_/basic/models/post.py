@@ -16,4 +16,9 @@ class Post(Base):
     title: Mapped[str] = mapped_column(String(100), nullable=False)
     content: Mapped[str] = mapped_column(Text, nullable=False)
     author_id: Mapped[int] = mapped_column(ForeignKey('users.id'), nullable=False)
-    author: Mapped['User'] = relationship('User', back_populates='posts')
+    author: Mapped['User'] = relationship(back_populates='posts')
+
+    def __repr__(self):
+        return (
+            f'Post(id={self.id!r}, title={self.title!r}, content={self.content[:50]!r})'
+        )
