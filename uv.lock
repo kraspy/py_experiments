@@ -888,7 +888,7 @@ dependencies = [
     { name = "pync" },
     { name = "python-dotenv" },
     { name = "rich" },
-    { name = "sqlalchemy" },
+    { name = "sqlalchemy", extra = ["asyncio"] },
     { name = "streamlit" },
     { name = "uvicorn", extra = ["standard"] },
 ]
@@ -916,7 +916,7 @@ requires-dist = [
     { name = "pync", specifier = ">=2.0.3" },
     { name = "python-dotenv", specifier = ">=1.1.1" },
     { name = "rich", specifier = ">=14.1.0" },
-    { name = "sqlalchemy", specifier = ">=2.0.43" },
+    { name = "sqlalchemy", extras = ["asyncio"], specifier = ">=2.0.43" },
     { name = "streamlit", specifier = ">=1.49.1" },
     { name = "uvicorn", extras = ["standard"], specifier = ">=0.36.0" },
 ]
@@ -1242,6 +1242,11 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/5d/a2/3a11b06715149bf3310b55a98b5c1e84a42cfb949a7b800bc75cb4e33abc/sqlalchemy-2.0.43-cp312-cp312-win32.whl", hash = "sha256:b535d35dea8bbb8195e7e2b40059e2253acb2b7579b73c1b432a35363694641d", size = 2098906, upload-time = "2025-08-11T15:55:00.645Z" },
     { url = "https://files.pythonhosted.org/packages/bc/09/405c915a974814b90aa591280623adc6ad6b322f61fd5cff80aeaef216c9/sqlalchemy-2.0.43-cp312-cp312-win_amd64.whl", hash = "sha256:1c6d85327ca688dbae7e2b06d7d84cfe4f3fffa5b5f9e21bb6ce9d0e1a0e0e0a", size = 2126260, upload-time = "2025-08-11T15:55:02.965Z" },
     { url = "https://files.pythonhosted.org/packages/b8/d9/13bdde6521f322861fab67473cec4b1cc8999f3871953531cf61945fad92/sqlalchemy-2.0.43-py3-none-any.whl", hash = "sha256:1681c21dd2ccee222c2fe0bef671d1aef7c504087c9c4e800371cfcc8ac966fc", size = 1924759, upload-time = "2025-08-11T15:39:53.024Z" },
+]
+
+[package.optional-dependencies]
+asyncio = [
+    { name = "greenlet" },
 ]
 
 [[package]]
