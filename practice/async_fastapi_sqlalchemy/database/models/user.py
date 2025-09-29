@@ -1,10 +1,14 @@
 from datetime import datetime
+from typing import TYPE_CHECKING
 
 from sqlalchemy import DateTime, Identity, String, func, sql
 from sqlalchemy.dialects.postgresql import JSONB
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from .base import BaseModel
+
+if TYPE_CHECKING:
+    from .post import Post
 
 
 class User(BaseModel):
@@ -41,3 +45,4 @@ class User(BaseModel):
         server_default=func.now(),
         server_onupdate=func.now(),  # Проверить, обновляется ли без триггера в БД
     )
+    posts: Mapped[list['Post']] = relationship(back_populates='author')
