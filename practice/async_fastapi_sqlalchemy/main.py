@@ -1,6 +1,9 @@
-def main():
-    print('This is my asynchronous app with FastAPI and SQLAlchemy!')
+import asyncio
+
+
+async def main():
+    pass
 
 
 if __name__ == '__main__':
-    main()
+    asyncio.run(main())
