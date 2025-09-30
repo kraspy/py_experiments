@@ -15,6 +15,7 @@ from sqlalchemy import (
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from .base import BaseModel
+from .posts_tags import posts_tags_association
 
 if TYPE_CHECKING:
     from .user import User
@@ -59,6 +60,10 @@ class Post(BaseModel):
         DateTime(timezone=True),
         server_default=sql.func.now(),
         onupdate=sql.func.now(),
+    )
+    tags: Mapped[list['Post']] = relationship(
+        back_populates='tags',
+        secondary=posts_tags_association,
     )
 
     __table_args__ = (

@@ -1,4 +1,4 @@
-"""create Many-To_Many relationship (posts <-> tags)
+"""add tag model
 
 Revision ID: b3ed1f9037cc
 Revises: 6c71b2a02a8b

@@ -1,10 +1,16 @@
 from datetime import datetime
+from typing import TYPE_CHECKING
 
 from sqlalchemy import DateTime, String, Text, sql
 from sqlalchemy.dialects.postgresql import CITEXT
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from .base import BaseModel
+from .post import Post
+from .posts_tags import posts_tags_association
+
+if TYPE_CHECKING:
+    from .post import Post
 
 
 class Tag(BaseModel):
@@ -30,4 +36,8 @@ class Tag(BaseModel):
         DateTime(timezone=True),
         server_default=sql.func.now(),
         onupdate=sql.func.now(),
+    )
+    posts: Mapped[list['Post']] = relationship(
+        back_populates='tags',
+        secondary=posts_tags_association,
     )
