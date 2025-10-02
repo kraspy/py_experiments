@@ -11,6 +11,7 @@ dependencies = [
     "bs4>=0.0.2",
     "click>=8.2.1",
     "coverage>=7.10.7",
+    "django>=5.2.7",
     "docxtpl>=0.20.1",
     "faker>=37.8.0",
     "fastapi>=0.117.1",
