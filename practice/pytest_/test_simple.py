@@ -1,5 +1,3 @@
-from decimal import DivisionByZero
-
 import pytest
 
 
@@ -34,3 +32,18 @@ def test_raises():
         division(1, 0)
 
     assert 'zero' in str(exc_info.value)  # Обязательно приводить к строке
+
+
+# ========================================
+# PARAMS
+# ========================================
+@pytest.mark.parametrize(
+    'a, b, expected',
+    (
+        (1, 2, 2),
+        (2, 2, 4),
+        (3, 2, 6),
+    ),
+)
+def test_multiple(a, b, expected):
+    assert a * b == expected
