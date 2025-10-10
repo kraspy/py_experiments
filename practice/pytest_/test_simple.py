@@ -44,6 +44,37 @@ def test_raises():
         (2, 2, 4),
         (3, 2, 6),
     ),
+    ids=['first', 'second', 'third'],
 )
 def test_multiple(a, b, expected):
     assert a * b == expected
+
+
+# функция в ids
+def ids_fn(value):
+    return repr(value)
+
+
+@pytest.mark.parametrize(
+    'a, b, expected',
+    (
+        (1, 1, 2),
+        (2, 2, 4),
+    ),
+    ids=ids_fn,
+)
+def test_add(a, b, expected):
+    assert a + b == expected
+
+
+# ========================================
+# MARKERS
+# ========================================
+@pytest.mark.slow
+def test_slow():
+    assert 1 + 1 == 2
+
+
+@pytest.mark.network
+def test_network():
+    assert 2 + 2 == 4
