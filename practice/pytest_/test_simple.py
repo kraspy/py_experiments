@@ -4,7 +4,7 @@ import pytest
 # ========================================
 # BASIC ASSERTION
 # ========================================
-def add_numbers(*args):
+def add_numbers(*args: int):
     return sum(args)
 
 
@@ -17,7 +17,7 @@ def test_add_numbers():
 # ========================================
 # RAISES
 # ========================================
-def division(a, b):
+def division(a: int, b: int) -> float:
     return a / b
 
 
@@ -46,12 +46,12 @@ def test_raises():
     ),
     ids=['first', 'second', 'third'],
 )
-def test_multiple(a, b, expected):
+def test_multiple(a: int, b: int, expected: int):
     assert a * b == expected
 
 
 # функция в ids
-def ids_fn(value):
+def ids_fn(value: str):
     return repr(value)
 
 
@@ -63,13 +63,18 @@ def ids_fn(value):
     ),
     ids=ids_fn,
 )
-def test_add(a, b, expected):
+def test_add(a: int, b: int, expected: int):
     assert a + b == expected
 
 
 # ========================================
 # MARKERS
 # ========================================
+
+# pytest -m "not slow"
+# pytest -m "not slow"
+
+
 @pytest.mark.slow
 def test_slow():
     assert 1 + 1 == 2
@@ -78,3 +83,18 @@ def test_slow():
 @pytest.mark.network
 def test_network():
     assert 2 + 2 == 4
+
+
+@pytest.mark.skip(reason='просто пропустить')
+def test_skip():
+    assert 1 + 1 == 2
+
+
+@pytest.mark.skipif(True, reason='Пропустить по условию')
+def test_skipif():
+    assert 1 + 1 == 2
+
+
+@pytest.mark.xfail(reason='Тут ошибка', strict=False)
+def test_xfail():
+    assert 1 + 1 == 2
