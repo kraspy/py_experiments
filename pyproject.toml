@@ -23,6 +23,7 @@ dependencies = [
     "playwright>=1.55.0",
     "pydantic-settings>=2.10.1",
     "pydub>=0.25.1",
+    "pympler>=1.1",
     "pync>=2.0.3",
     "python-dotenv>=1.1.1",
     "rich>=14.1.0",
