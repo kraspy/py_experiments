@@ -27,3 +27,22 @@ class CardDeck:
 deck = CardDeck()
 
 print(deck[0], deck[-1])
+
+selected_card = deck[0]
+
+print(selected_card in deck)  # !__contains__ => __iter__ => __getitem__
+
+
+suit_order = dict(spades=3, hearts=2, diamonds=1, clubs=0)
+
+
+def spades_high(card: Card):
+    card_rank = CardDeck.ranks.index(card.rank)
+
+    result = card_rank * len(suit_order) + suit_order[card.suit]
+    print(f'{card.rank} {card.suit}')
+    print(f'{card_rank} * {len(suit_order)} + {suit_order[card.suit]} = {result}')
+    return result
+
+
+print(sorted(deck, key=spades_high))
