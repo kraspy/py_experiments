@@ -1,3 +1,4 @@
+import random
 import matplotlib.pyplot as plt
 
 
@@ -30,7 +31,35 @@ def show_simple_plot(
     plt.show()
 
 
-show_simple_plot(
-    (0, 1, 2, 3, 4, 5),
-    (0, 4, 3, 2, 5, 1),
-)
+def show_simple_bar():
+    x_values = list(range(1, 11))
+    y_values = [random.randint(1, 100) for _ in range(10)]
+
+    plt.bar(
+        x_values,
+        y_values,
+        width=0.2,
+        color=('r', 'g', 'b', 'm', 'y', 'k', 'b'),
+    )
+
+    plt.show()
+
+
+def show_pie():
+    values = [10, 20, 30, 40]
+
+    labels = 'food', 'entertainments', 'travels', 'sport'
+
+    plt.pie(values, labels=labels, colors=('r', 'g', 'y', 'm'))
+
+    plt.show()
+
+
+# show_simple_plot(
+#     (0, 1, 2, 3, 4, 5),
+#     (0, 4, 3, 2, 5, 1),
+# )
+
+# show_simple_bar()
+
+show_pie()
