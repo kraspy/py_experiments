@@ -1,4 +1,5 @@
 from decimal import Decimal
+from math import ceil
 
 import typer
 
@@ -14,7 +15,7 @@ def main():
     walls_area = ((room_width * room_length) * 2) * room_height
     roll_area = roll_width * roll_length
 
-    rolls_neded = walls_area / roll_area
+    rolls_neded = ceil(walls_area / roll_area)
 
     info = f"""\
     Площадь стен: {walls_area} м²
