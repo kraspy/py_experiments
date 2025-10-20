@@ -33,6 +33,8 @@ dependencies = [
     "selenium>=4.35.0",
     "sqlalchemy[asyncio]>=2.0.43",
     "streamlit>=1.49.1",
+    "textual>=6.2.1",
+    "textual-dev>=1.8.0",
     "typer>=0.19.2",
     "uvicorn[standard]>=0.36.0",
 ]
