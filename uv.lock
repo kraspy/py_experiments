@@ -1110,6 +1110,19 @@ wheels = [
 ]
 
 [[package]]
+name = "psycopg"
+version = "3.2.11"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "typing-extensions" },
+    { name = "tzdata", marker = "sys_platform == 'win32'" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/27/02/9fdfc018c026df2bcf9c11480c1014f9b90c6d801e5f929408cbfbf94cc0/psycopg-3.2.11.tar.gz", hash = "sha256:398bb484ed44361e041c8f804ed7af3d2fcefbffdace1d905b7446c319321706", size = 160644, upload-time = "2025-10-18T22:48:28.136Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/aa/1b/96ee90ed0007d64936d9bd1bb3108d0af3cf762b4f11dbd73359f0687c3d/psycopg-3.2.11-py3-none-any.whl", hash = "sha256:217231b2b6b72fba88281b94241b2f16043ee67f81def47c52a01b72ff0c086a", size = 206766, upload-time = "2025-10-18T22:43:32.114Z" },
+]
+
+[[package]]
 name = "psycopg2-binary"
 version = "2.9.10"
 source = { registry = "https://pypi.org/simple" }
@@ -1170,6 +1183,7 @@ dependencies = [
     { name = "passlib" },
     { name = "playwright" },
     { name = "plotly" },
+    { name = "psycopg" },
     { name = "pydantic-settings" },
     { name = "pydub" },
     { name = "pympler" },
@@ -1211,6 +1225,7 @@ requires-dist = [
     { name = "passlib", specifier = ">=1.7.4" },
     { name = "playwright", specifier = ">=1.55.0" },
     { name = "plotly", specifier = ">=6.3.1" },
+    { name = "psycopg", specifier = ">=3.2.11" },
     { name = "pydantic-settings", specifier = ">=2.10.1" },
     { name = "pydub", specifier = ">=0.25.1" },
     { name = "pympler", specifier = ">=1.1" },
