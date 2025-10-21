@@ -1,0 +1,54 @@
+StopWatch {
+    background: black;
+    border: solid green;
+    padding: 1;
+}
+
+TimeDigits {
+    text-align: center;
+    background: black;
+    color: gray;
+}
+
+Button {
+    width: 25;
+}
+
+#start {
+
+}
+
+#stop {
+    display: none;
+
+}
+
+#reset {
+
+}
+
+.started {
+    background: $success-muted;
+    color: $text;
+}
+
+.started TimeDigits {
+    background: $success-muted;
+    color: $foreground;
+}
+
+.started #start {
+    display: none;
+}
+
+.started #stop {
+    display: block;
+}
+
+.started #reset {
+    visibility: hidden;
+}
+
+.started #remove {
+    visibility: hidden;
+}
