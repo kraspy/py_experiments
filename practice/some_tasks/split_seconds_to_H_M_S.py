@@ -24,3 +24,10 @@ def format_seconds(sec: int) -> tuple[int, ...]:
     print(seconds)
 
     return hours, minutes, seconds
+
+
+def format_seconds2(sec: int) -> tuple[int, ...]:
+    minutes, seconds = divmod(sec, 60)
+    hours, minutes = divmod(minutes, 60)
+
+    return hours, minutes, seconds
