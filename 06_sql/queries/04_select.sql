@@ -1,23 +1,9 @@
--- for example
-create view view_name as
-select family_id, family_name from family;
+select * from genus; -- table genus;
 
+select genus_name from genus;
 
--- Queries
-select 1 + 1 as num;
+select genus_name, genus_id from genus;
 
-select * from family;
+select genus_name as bird_genus, genus_id from genus;
 
-select * from (
-    select family_name from family
-);
-
-select * from postgres.public.view_name;
-
-select num from generate_series(1, 10) as num;
-
-select * from (
-    values
-        (1, 'User1'),
-        (2, 'User2')
-) as t(id, name);
+select genus_name as bird_genus, genus_id from postgres.public.genus;
