@@ -20,6 +20,7 @@ dependencies = [
     "ipywidgets>=8.1.7",
     "lxml>=6.0.2",
     "matplotlib>=3.10.7",
+    "nbconvert>=7.16.6",
     "passlib>=1.7.4",
     "playwright>=1.55.0",
     "plotly>=6.3.1",
