@@ -20,3 +20,14 @@ create table species (
     primary_color varchar(50) not null,
     genus_id bigint not null references genus(genus_id)
 );
+
+create schema test;
+
+create table test.tmp_table as (
+    select species_id, species_name from species 
+    where species_name ilike 'синица%'
+);
+
+select species_name into test.tmp_table
+from species
+where species_name ilike 'Синица%';
