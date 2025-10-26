@@ -10,3 +10,8 @@ select * from (
     values (2, 3), (3, 20), (2, 4), (1, 20), (3, 4), (1, 19)
 ) as something(a, b)
 order by b desc, a asc;
+
+select *
+from (
+    select species_name from species order by length(species_name), species_name limit 5
+) order by length(species_name) desc;
