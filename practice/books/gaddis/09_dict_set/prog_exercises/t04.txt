@@ -1,0 +1,10 @@
+This sample text is intended for testing, testing, and more testing of reversible substitutions and mappings.
+The goal is clarity, clarity, clarity, while preserving structure, structure, and readability.
+Certain words repeat once, twice, or thrice to validate stability, stability, stability across multiple passes.
+Simple cases pass once, complex cases pass twice, and edge cases may pass three, four, or five times.
+Noise remains minimal, minimal, minimal, to make differences visible, visible, visible after transformation.
+Letters change, change, change, but spaces stay, stay, stay, ensuring consistent, consistent, consistent decoding.
+We expect identical results after double application, application, application of the same mapping.
+This deliberate repetition, repetition, repetition helps detect collisions, collisions, and unintended merges.
+Short words repeat 1 time, longer words repeat 2 times, and special targets repeat 3, 4, 5, or even 6 times.
+Finally, the output should exactly, exactly, exactly revert to the original, original, original string.
