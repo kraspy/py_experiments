@@ -1,3 +1,5 @@
+import re
+
 text = """
 Пример строки для тренировки поиска с помощью re в Python:
 1. Имя: Иван Иванов, телефон: +7-999-123-45-67, email: ivan@example.com
@@ -10,15 +12,30 @@ text = """
 """
 
 # Пример поиска телефонного номера
+r = re.search(r'\+?\d-?\d{3}-?\d{3}-?\d{2}-?\d{2}', text)
+print(r)
 
 # Поиск даты и времени
+r = re.search(r'\d{4}-\d{2}-\d{2}', text)
+print(r)
 
 # Поиск email
+r = re.search(r'\w+@\w+\.\w+', text)
+print(r)
 
 # Поиск HTML-тегов с ленивым захватом содержимого
+r = re.search(r'<.+?>.*?</\w+>', text)
+print(r)
 
 # Поиск чисел включая целые и десятичные, с учетом знака
+r = re.findall(r'[\+-]?\d+\.?\d+?', text)
+print(r)
 
 # Поиск слов с буквами и цифрами
+r = re.findall(r'\b[A-Za-zА-Яа-яЁё]+\d+\.?\d*\b', text)
+print(r)
 
 # Поиск повторяющихся слов
+r = re.finditer(r'\b([А-Яа-яЁё]+)\b(?:\s\1)+', text)
+for el in r:
+    print(list(r))
