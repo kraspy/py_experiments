@@ -39,3 +39,20 @@ print(r)
 r = re.finditer(r'\b([А-Яа-яЁё]+)\b(?:\s\1)+', text)
 for el in r:
     print(list(r))
+
+
+# ========================================
+# Deep Experiments
+# ========================================
+regexp = re.compile(r'\d+  # 123123', flags=re.VERBOSE)
+r = re.search(regexp, text)
+print(r)
+
+r = re.findall(r'(?i:и)ван\w*', text)
+print(r)
+
+r = re.findall(r'^.{10}', text, flags=re.S | re.M)
+print(r)
+
+r = re.findall(r'^\d?.|.+', text, flags=re.M)
+print(r)
