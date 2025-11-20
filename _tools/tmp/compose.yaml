@@ -1,0 +1,42 @@
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_PASSWORD: 123
+    ports:
+      - 5432:5432
+
+    healthcheck:
+      test: ["CMD", "pg_isready"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+  
+  py:
+    container_name: python
+    restart: always
+    build:
+      context: .
+      dockerfile: docker/uv.Dockerfile
+      args:
+        - TMPARG=${SECRET_VAR}
+    environment:
+      - PYTHONBUFFERED=1
+    volumes:
+      - data:/data
+    deploy:
+      resources:
+        limits:
+          cpus: 0.2
+          memory: 100m
+        reservations:
+          cpus: 0.1
+          memory: 50m
+    depends_on:
+      db:
+        condition: service_healthy
+
+
+volumes:
+  data:

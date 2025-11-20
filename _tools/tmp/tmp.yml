@@ -1,0 +1,8 @@
+content: &content
+  - p=123
+  - a=456
+
+html:
+  head:
+  body:
+  <<: *content
