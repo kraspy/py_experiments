@@ -4,6 +4,9 @@ class RetailItem:
         self.inventory = inventory
         self.price = price
 
+    def __str__(self):
+        return f'{self.description}, {self.price}'
+
 
 if __name__ == '__main__':
     item1 = RetailItem('Пиджак', 12, 59.95)
