@@ -1,5 +1,7 @@
+# ========================================
+# Variables
+# ========================================
 # 4.1
-
 secret = 5
 guess = 3
 
@@ -23,6 +25,9 @@ elif not small and not green:
 elif not small and green:
     print('pumpkin')
 
+# ========================================
+# String
+# ========================================
 # 5.1
 song = """When an eel grabs your arm,
 And it causes great harm,
@@ -111,3 +116,37 @@ print('Duck: {},  Pumpkin: {}, Shpitz: {}'.format(*NAMES))
 
 # 5.8
 print(f'Duck: {NAMES[0]},  Pumpkin: {NAMES[1]}, Shpitz: {NAMES[2]}')
+
+# ========================================
+# Loops
+# ========================================
+# 6.1
+for i in [3, 2, 1, 0]:
+    print(i)
+
+# 6.2
+guess_me = 7
+number = 1
+while True:
+    if number < guess_me:
+        print('too low')
+    elif number == guess_me:
+        print('found it!')
+        break
+    else:
+        print('oops')
+        break
+    number += 1
+
+# 6.3
+guess_me = 5
+
+for number in range(10):
+    if number < guess_me:
+        print('too low')
+    elif number == guess_me:
+        print('found it!')
+        break
+    else:
+        print('oops')
+        break
