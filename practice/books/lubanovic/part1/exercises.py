@@ -150,3 +150,55 @@ for number in range(10):
     else:
         print('oops')
         break
+
+
+# ========================================
+# Tuple, List
+# ========================================
+# 7.1
+years_list = [1988, 1989, 1990, 1991, 1992, 1992]
+
+# 7.2
+# 1991
+
+# 7.3
+# 1992
+
+# 7.4
+things = ['mozzarella', 'cinderella', 'salmonella']
+
+# 7.5
+print(things[1].capitalize())
+
+# 7.6
+print(things[0].upper())
+
+# 7.7
+things.remove('salmonella')
+
+# 7.8
+surprise = ['Groucho', 'Chico', 'Harpo']
+
+# 7.9
+print(surprise[-1].lower()[::-1].capitalize())
+
+# 7.10
+even = [number for number in range(10) if number % 2 == 0]
+print(even)
+
+# 7.11
+start1 = ['fee', 'fie', 'foe']
+rhymes = [
+    ('flop', 'get a mop'),
+    ('fope', 'turn the rope'),
+    ('fa', 'get your ma'),
+    ('fudge', 'call the judge'),
+    ('fat', 'pet the cat'),
+    ('fog', 'walk the dog'),
+    ('fun', "say we're done"),
+]
+start2 = 'Someone better'
+
+for first, second in rhymes:
+    print(f'{" ".join([word.capitalize() for word in start1])}! {first.capitalize()}!')
+    print(f'{start2} {second}.')
