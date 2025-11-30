@@ -202,3 +202,97 @@ start2 = 'Someone better'
 for first, second in rhymes:
     print(f'{" ".join([word.capitalize() for word in start1])}! {first.capitalize()}!')
     print(f'{start2} {second}.')
+
+
+# 8.1
+e2f = {
+    'dog': 'chien',
+    'cat': 'chat',
+    'walrus': 'morse',
+}
+
+# 8.2
+print(e2f['walrus'])
+
+# 8.3
+f2e = {value: key for key, value in e2f.items()}
+
+# 8.4
+print(f2e['chien'])
+
+# 8.5
+print(set(f2e.keys()))
+
+# 8.6
+life = {
+    'animals': {
+        'cats': [
+            'Henry',
+            'Grumpy',
+            'Lucy',
+        ],
+        'octopi': {},
+        'emus': {},
+    },
+    'plants': {},
+    'other': {},
+}
+
+# 8.7
+print(life.keys())
+
+# 8.8
+print(life['animals'].keys())
+
+# 8.9
+print(life['animals']['cats'])
+
+# 8.10
+squares = {num: num**2 for num in range(10)}
+print(squares)
+
+# 8.11
+odd = {num for num in range(10) if num % 2 == 0}
+print(odd)
+
+# 8.12
+string_gen = (f'Got {num}' for num in range(10))
+for text in string_gen:
+    print(text)
+
+# 8.13
+person_types = (
+    'optimist',
+    'pessimist',
+    'troll',
+)
+minds = (
+    'The glass is half full',
+    'The glass is half empty',
+    'How did you get a glass?',
+)
+
+persons_dict = dict(
+    zip(
+        person_types,
+        minds,
+    ),
+)
+
+print(persons_dict)
+
+# 8.14
+titles = [
+    'Creature of Habit',
+    'Crewel Fate',
+    'Sharks On a Plane',
+]
+plots = [
+    'A nun turns into a monster',
+    'A haunted yarn shop',
+    'Check your exits',
+]
+
+movies = dict(zip(titles, plots))
+
+print(movies)
