@@ -25,6 +25,7 @@ elif not small and not green:
 elif not small and green:
     print('pumpkin')
 
+
 # ========================================
 # String
 # ========================================
@@ -117,6 +118,7 @@ print('Duck: {},  Pumpkin: {}, Shpitz: {}'.format(*NAMES))
 # 5.8
 print(f'Duck: {NAMES[0]},  Pumpkin: {NAMES[1]}, Shpitz: {NAMES[2]}')
 
+
 # ========================================
 # Loops
 # ========================================
@@ -204,6 +206,9 @@ for first, second in rhymes:
     print(f'{start2} {second}.')
 
 
+# ========================================
+# Dictionary
+# ========================================
 # 8.1
 e2f = {
     'dog': 'chien',
@@ -298,6 +303,9 @@ movies = dict(zip(titles, plots))
 print(movies)
 
 
+# ========================================
+# Functions
+# ========================================
 # 9.1
 def good() -> list[str]:
     return ['Harry', 'Ron', 'Hermione']
@@ -346,3 +354,141 @@ try:
     oops()
 except OopsException:
     print('Caught an OopsException')
+
+
+# ========================================
+# Classes
+# ========================================
+# 10.1
+class Thing:
+    pass
+
+
+print(Thing)
+
+example = Thing()
+
+print(example)
+
+
+# 10.2
+class Thing2:
+    letters = 'abc'
+
+
+print(Thing2.letters)
+
+
+# 10.3
+class Thing3:
+    def __init__(self, letters):
+        self.letters = letters
+
+
+print(Thing3('xyz').letters)
+
+
+# 10.4
+class Element:
+    def __init__(self, name, symbol, number):
+        self.name = name
+        self.symbol = symbol
+        self.number = number
+
+    def __str__(self):
+        return f'{self.name} {self.symbol} {self.number}'
+
+
+element = Element('Hydrogen', 'H', 1)
+print(f'{element.name} {element.symbol} {element.number}')
+
+# 10.5
+hydrogen_dict = {'name': 'Hydrogen', 'symbol': 'H', 'number': 1}
+
+hydrogen = Element(**hydrogen_dict)
+print(f'{hydrogen.name} {hydrogen.symbol} {hydrogen.number}')
+
+# 10.6
+Element.dump = lambda self: print(f'({self.name}, {self.symbol}, {self.number})')
+hydrogen.dump()
+
+# 10.7
+print(hydrogen)
+
+
+# 10.8
+class NewElement:
+    def __init__(self, name, symbol, number):
+        self._name = name
+        self._symbol = symbol
+        self._number = number
+
+    def __str__(self):
+        return f'{self._name} {self._symbol} {self._number}'
+
+    @property
+    def name(self):
+        return self._name
+
+    @property
+    def symbol(self):
+        return self._symbol
+
+    @property
+    def number(self):
+        return self._number
+
+
+new_el = NewElement('Hydrogen', 'H', 1)
+print(f'{new_el.name} {new_el.symbol} {new_el.number}')
+
+
+# 10.9
+class Bear:
+    def eats(self):
+        return 'berries'
+
+
+class Rabbit:
+    def eats(self):
+        return 'clover'
+
+
+class Octothorpe:
+    def eats(self):
+        return 'campers'
+
+
+for animal in Bear(), Rabbit(), Octothorpe():
+    print(f'{animal.__class__.__name__} eats: {animal.eats()}')
+
+
+# 10.10
+class Laser:
+    def does(self):
+        return 'disintegrate'
+
+
+class Claw:
+    def does(self):
+        return 'crush'
+
+
+class SmartPhone:
+    def does(self):
+        return 'ring'
+
+
+class Robot:
+    def __init__(self, laser, claw, smartphone):
+        self.laser = laser
+        self.claw = claw
+        self.smartphone = smartphone
+
+    def does(self):
+        for part in self.laser, self.claw, self.smartphone:
+            print(f'{part.__class__.__name__}: {part.does()}')
+
+
+robot = Robot(Laser(), Claw(), SmartPhone())
+robot.does()
