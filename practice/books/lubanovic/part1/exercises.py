@@ -492,3 +492,57 @@ class Robot:
 
 robot = Robot(Laser(), Claw(), SmartPhone())
 robot.does()
+
+
+# ========================================
+# Modules
+# ========================================
+# 11.1
+# 11.2
+# 11.3
+# 11.4
+def get_hours():
+    import zoo as menagerie
+
+    menagerie.hours()
+
+
+get_hours()
+
+
+# 11.5
+def get_plains():
+    from zoo import plain
+
+    print(plain)
+
+
+get_plains()
+
+
+# 11.6
+def print_ordereddict() -> None:
+    from collections import OrderedDict
+
+    from zoo import plain
+
+    od = OrderedDict(**plain)
+
+    print(od)
+
+
+print_ordereddict()
+
+
+# 11.7
+def print_ordereddict() -> None:
+    from collections import defaultdict
+
+    dict_of_lists = defaultdict(list)
+
+    dict_of_lists['a'].append('something for a')
+
+    print(dict_of_lists)
+
+
+print_ordereddict()
