@@ -296,3 +296,53 @@ plots = [
 movies = dict(zip(titles, plots))
 
 print(movies)
+
+
+# 9.1
+def good() -> list[str]:
+    return ['Harry', 'Ron', 'Hermione']
+
+
+# 9.2
+def get_odds() -> list[int]:
+    for index in range(10):
+        if index % 2 != 0:
+            yield index
+
+
+for index, odd in enumerate(get_odds()):
+    if index == 2:
+        print(odd)
+
+
+# 9.3
+def test(func) -> None:
+    def wrapper(*args, **kwargs) -> None:
+        print('start')
+        func(*args, **kwargs)
+        print('end')
+
+    return wrapper
+
+
+@test
+def hello() -> None:
+    print('hello')
+
+
+hello()
+
+
+# 9.4
+class OopsException(Exception):
+    pass
+
+
+def oops() -> None:
+    raise OopsException
+
+
+try:
+    oops()
+except OopsException:
+    print('Caught an OopsException')
