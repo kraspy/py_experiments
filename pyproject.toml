@@ -30,6 +30,7 @@ dependencies = [
     "pympler>=1.1",
     "pync>=2.0.3",
     "python-dotenv>=1.1.1",
+    "redis>=7.1.0",
     "rich>=14.1.0",
     "selenium>=4.35.0",
     "sqlalchemy[asyncio]>=2.0.43",
